@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<head>
+
+<body id="container">
+	<div id="c">
+	<p id="borb">
+		enter "bap" or "boop"<BR>
+	</p>
+
+		<label>input here : <input type="text" size="40" id="txtb" onmouseover="ovfunc()"></label><BR>
+		<input type="button" id="buttonb" value="click" onclick="clickfunc()">
+	<p id="msgArea">
+	</div>
+
+<style>
+	#container{
+		text-align : center;
+		margin-top : 100px;
+	}
+	
+	#txtb{
+		position : absolute;
+		top : 0 px;
+		left : 0 px;
+	}
+
+</style>
+
+<script>
+	function ovfunc(){
+			let ov = document.getElementById("txtb");
+			let x = Math.random()*100;
+			let y = Math.random()*100;
+			ov.style.top = x + "px";
+			ov.style.left = y + "px";
+		}
+
+	function clickfunc(){
+		let fun = document.getElementById("txtb");
+		let msgArea  = document.getElementById("msgArea");
+
+		if(fun.value == "bap" ){
+		msgArea.innerText = "boop";
+		} else if (fun.value == "boop" ){
+		msgArea.innerText = "bap";
+		} else {
+		msgArea.innerText = "👻bump👻";
+		msgArea.style.color = "red";
+		msgArea.style.fontSize = "50px";
+		}
+	}  
+
+
+</script>
+</body>
+</html>
